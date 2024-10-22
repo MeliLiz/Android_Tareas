@@ -11,7 +11,7 @@
         android:id="@+id/Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Gestión de tareas"
+        android:text="@string/titulo_gestion"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/titulo_tarea_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo de la tarea"
+        android:text="@string/nombre_tarea"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
         android:layout_height="42dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:hint="Titulo"
+        android:hint="@string/titulo_hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_tarea_label" />
 
@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:text="En equipo"
+        android:text="@string/equipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modalidad_label" />
 
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
-        android:text="Modalidad Tarea"
+        android:text="@string/tarea_modalidad"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_text_field" />
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
-        android:text="Prioridad"
+        android:text="@string/prioridad"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/modalidad_check_box" />
@@ -79,12 +79,14 @@
         android:id="@+id/agregar_tarea_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="48dp"
-        android:text="Agregar Tarea"
+        android:text="@string/agregar"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+        app:layout_constraintVertical_bias="0.123" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
@@ -99,30 +101,19 @@
             android:id="@+id/prioridad_alta_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Alta" />
+            android:text="@string/alta" />
 
         <RadioButton
             android:id="@+id/prioridad_media_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Media" />
+            android:text="@string/media" />
 
         <RadioButton
             android:id="@+id/prioridad_baja_rb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Baja" />
+            android:text="@string/baja" />
     </RadioGroup>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="90dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/agregar_tarea_bt"
-        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

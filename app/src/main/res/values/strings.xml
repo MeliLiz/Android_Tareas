@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Tareas</string>
+    <string name="titulo_gestion">Gestión de tareas</string>
+    <string name="nombre_tarea">Título de la tarea</string>
+    <string name="titulo_hint">Título</string>
+    <string name="tarea_modalidad">Modalidad de la tarea</string>
+    <string name="equipo">En equipo</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="alta">Alta</string>
+    <string name="media">Media</string>
+    <string name="baja">Baja</string>
+    <string name="agregar">Agregar tarea</string>
+    <string name="registro_usuario">Registro de usuario</string>
+    <string name="nombre">Nombre</string>
+    <string name="hint_nombre">Tu nombre aquí</string>
+    <string name="nacimiento">Fecha de nacimiento</string>
+    <string name="hint_fecha">Fecha</string>
+    <string name="usuario">Usuario</string>
+    <string name="hint_usuario">Tu nombre de usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="registrar">Registrar</string>
 </resources>
