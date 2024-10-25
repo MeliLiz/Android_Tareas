@@ -9,6 +9,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -57,11 +59,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            Log.d("MainActivity", "Settings item selected from three-dot menu");
-            return true;
+            Log.d("MainActivity", "Ajustes seleccionado en el menú de tres puntos");
+            Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT).show();
+
         } else if (id == R.id.action_about) {
-            Log.d("MainActivity", "About item selected from three-dot menu");
-            return true;
+            Log.d("MainActivity", "Acerca de seleccionado en el menú de tres puntos");
+            Toast.makeText(this, "Acerca de", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.action_logout) {
+            Log.d("MainActivity", "Cerrar sesión seleccionado en el menú de tres puntos");
+            Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+
+        } else if (id == R.id.profile) {
+            Log.d("MainActivity", "Perfil seleccionado en el menú de tres puntos");
+            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -73,14 +84,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.view_homeworks) {
             Log.d("MainActivity", "Ver tareas seleccionado del drawer menu");
+            Toast.makeText(this, "Ver tareas", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.view_resources) {
             Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
+            Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.add_homework) {
             Log.d("MainActivity", "Asignar tarea seleccionado del drawer menu");
+            Toast.makeText(this, "Asignar tarea", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.edit_homework) {
             Log.d("MainActivity", "Editar tareas seleccionado del drawer menu");
+            Toast.makeText(this, "Editar tareas", Toast.LENGTH_SHORT).show();
         } else {
             Log.d("MainActivity", "Elemento no reconocido seleccionado");
+            Toast.makeText(this, "Elemento no reconocido", Toast.LENGTH_SHORT).show();
         }
 
         drawer.closeDrawer(GravityCompat.START);

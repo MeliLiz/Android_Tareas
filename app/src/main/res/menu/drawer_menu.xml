@@ -3,17 +3,17 @@
     <item
         android:id="@+id/view_homeworks"
         android:icon="@drawable/view_homeworks"
-        android:title="Ver tareas" />
+        android:title="@string/ver_tareas" />
     <item
         android:id="@+id/view_resources"
         android:icon="@drawable/view_resources"
-        android:title="Ver recursos" />
+        android:title="@string/ver_recursos" />
     <item
         android:id="@+id/add_homework"
         android:icon="@drawable/add_homework"
-        android:title="Asignar Tarea" />
+        android:title="@string/asignar_tarea" />
     <item
         android:id="@+id/edit_homework"
         android:icon="@drawable/edit_homework"
-        android:title="Editar Tareas" />
+        android:title="@string/editar_tareas" />
 </menu>

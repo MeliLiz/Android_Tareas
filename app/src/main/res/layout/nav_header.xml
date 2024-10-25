@@ -10,6 +10,6 @@
         android:id="@+id/nav_header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mi Aplicación"
+        android:text="@string/appNname"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>

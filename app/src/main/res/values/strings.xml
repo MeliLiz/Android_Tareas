@@ -22,4 +22,17 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="sun_image_desc">Imagen del sol</string>
+    
+    <string name="perfil">Perfil</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <string name="ver_tareas">Ver tareas</string>
+    <string name="ver_recursos">Ver recursos</string>
+    <string name="asignar_tarea">Asignar tarea</string>
+    <string name="editar_tareas">Editar tareas</string>
+
+    <string name="appNname">Tareas</string>"
+
 </resources>
