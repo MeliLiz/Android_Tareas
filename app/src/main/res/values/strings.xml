@@ -19,4 +19,7 @@
     <string name="hint_usuario">Tu nombre de usuario</string>
     <string name="contraseña">Contraseña</string>
     <string name="registrar">Registrar</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="sun_image_desc">Imagen del sol</string>
 </resources>
