@@ -13,6 +13,8 @@
         android:orientation="vertical"
         android:layout_margin="20dp">
 
+
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -22,7 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="579dp"
-            android:text="@string/registro_usuario"
+            android:text="@string/user_details"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,16 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.237" />
 
-        <Button
-            android:id="@+id/register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="48dp"
-            android:text="@string/registrar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+
 
         <TextView
             android:id="@+id/textView2"
@@ -54,15 +47,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextText3"
             style="@style/Widget.AppCompat.EditText"
             android:layout_width="281dp"
             android:layout_height="39dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="@string/hint_nombre"
-            android:inputType="text"
+            android:text="Juan Pérez"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.433"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,14 +72,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextDate2"
             android:layout_width="281dp"
             android:layout_height="37dp"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="@string/hint_fecha"
-            android:inputType="date"
+            android:text="07-07-2000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,14 +96,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextText4"
             android:layout_width="281dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="@string/hint_usuario"
-            android:inputType="text"
+            android:text="Juan P"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.433"
             app:layout_constraintStart_toStartOf="parent"
@@ -130,32 +120,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="149dp"
-            android:layout_height="117dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/sun"
-            app:layout_constraintBottom_toTopOf="@+id/register"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword3"
-            app:layout_constraintVertical_bias="0.434" />
-
-        <EditText
+        <TextView
             android:id="@+id/editTextNumberPassword3"
             android:layout_width="281dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
             android:ems="10"
-            android:inputType="numberPassword"
+            android:text="************"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <Button
+            android:id="@+id/editar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="48dp"
+            android:text="@string/editar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword3"
+            tools:layout_editor_absoluteX="0dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView

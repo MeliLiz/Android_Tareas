@@ -1,28 +1,33 @@
 package com.example.tareas;
 
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends BaseActivity {
-
+public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private TareaAdapter adapter;
     private List<Tarea> tareaList;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflar la vista del fragmento
+        View view = inflater.inflate(R.layout.home_fragment, container, false);
 
-        recyclerView = findViewById(R.id.recyclerViewTareas);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Inicializar RecyclerView
+        recyclerView = view.findViewById(R.id.recyclerViewTareas);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         // Crear lista de tareas
         tareaList = new ArrayList<>();
@@ -34,8 +39,7 @@ public class HomeActivity extends BaseActivity {
         adapter = new TareaAdapter(tareaList);
         recyclerView.setAdapter(adapter);
 
-        setupToolbarAndDrawer();
-
-
+        // Devolver la vista completa con RecyclerView inicializado
+        return view;
     }
 }

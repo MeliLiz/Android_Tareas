@@ -37,4 +37,7 @@
 
     <string name="login">Ingresar</string>
 
+    <string name="user_details">Detalles de usuario</string>
+    <string name="editar">Editar</string>
+
 </resources>

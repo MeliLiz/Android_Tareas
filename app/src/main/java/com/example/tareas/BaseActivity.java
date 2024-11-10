@@ -11,6 +11,8 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -92,8 +94,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
             Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.add_homework) {
-            Intent intent = new Intent(this, AddTaskActivity.class);
-            startActivity(intent);
+            displayFragment(new AddHomeworkFragment());
         } else if (id == R.id.edit_homework) {
             Log.d("MainActivity", "Editar tareas seleccionado del drawer menu");
             Toast.makeText(this, "Editar tareas", Toast.LENGTH_SHORT).show();
@@ -105,4 +106,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void displayFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+    }
+
 }
