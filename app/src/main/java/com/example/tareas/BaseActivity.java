@@ -76,8 +76,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
 
         } else if (id == R.id.profile) {
-            Log.d("MainActivity", "Perfil seleccionado en el menú de tres puntos");
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show();
+            displayFragment(new ProfileFragment());
         }
 
         return super.onOptionsItemSelected(item);
@@ -88,8 +87,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.view_homeworks) {
-            Log.d("MainActivity", "Ver tareas seleccionado del drawer menu");
-            Toast.makeText(this, "Ver tareas", Toast.LENGTH_SHORT).show();
+            displayFragment(new HomeFragment());
         } else if (id == R.id.view_resources) {
             Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
             Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();

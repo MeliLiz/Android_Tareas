@@ -7,10 +7,6 @@ xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:id="@+id/activity_home">
 
-    <!-- Título de la pantalla -->
-
-    <!-- Para mostrar la lista de tareas -->
-
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
