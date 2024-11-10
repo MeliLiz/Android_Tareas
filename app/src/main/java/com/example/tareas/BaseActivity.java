@@ -1,5 +1,6 @@
 package com.example.tareas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -91,8 +92,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
             Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.add_homework) {
-            Log.d("MainActivity", "Asignar tarea seleccionado del drawer menu");
-            Toast.makeText(this, "Asignar tarea", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, AddTaskActivity.class);
+            startActivity(intent);
         } else if (id == R.id.edit_homework) {
             Log.d("MainActivity", "Editar tareas seleccionado del drawer menu");
             Toast.makeText(this, "Editar tareas", Toast.LENGTH_SHORT).show();

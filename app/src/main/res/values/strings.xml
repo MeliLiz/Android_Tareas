@@ -30,7 +30,7 @@
 
     <string name="ver_tareas">Ver tareas</string>
     <string name="ver_recursos">Ver recursos</string>
-    <string name="asignar_tarea">Asignar tarea</string>
+    <string name="asignar_tarea">Agregar tarea</string>
     <string name="editar_tareas">Editar tareas</string>
 
     <string name="appNname">Tareas</string>"

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/add_homework"
+        android:icon="@drawable/add_homework"
+        android:title="@string/asignar_tarea" />
+    <item
         android:id="@+id/view_homeworks"
         android:icon="@drawable/view_homeworks"
         android:title="@string/ver_tareas" />
@@ -8,10 +12,6 @@
         android:id="@+id/view_resources"
         android:icon="@drawable/view_resources"
         android:title="@string/ver_recursos" />
-    <item
-        android:id="@+id/add_homework"
-        android:icon="@drawable/add_homework"
-        android:title="@string/asignar_tarea" />
     <item
         android:id="@+id/edit_homework"
         android:icon="@drawable/edit_homework"
