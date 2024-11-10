@@ -1,6 +1,7 @@
 package com.example.tareas;
 
 import android.os.Bundle;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     private RecyclerView recyclerView;
     private TareaAdapter adapter;
@@ -32,6 +33,9 @@ public class HomeActivity extends AppCompatActivity {
         // Configurar el adaptador
         adapter = new TareaAdapter(tareaList);
         recyclerView.setAdapter(adapter);
+
+        setupToolbarAndDrawer();
+
 
     }
 }
