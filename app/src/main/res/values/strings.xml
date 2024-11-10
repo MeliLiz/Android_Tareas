@@ -35,4 +35,6 @@
 
     <string name="appNname">Tareas</string>"
 
+    <string name="login">Ingresar</string>
+
 </resources>
