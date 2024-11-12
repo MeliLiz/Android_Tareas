@@ -64,8 +64,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            Log.d("MainActivity", "Ajustes seleccionado en el menú de tres puntos");
-            Toast.makeText(this, "Ajustes", Toast.LENGTH_SHORT).show();
+            displayFragment(new ConfigFragment());
 
         } else if (id == R.id.action_about) {
             Log.d("MainActivity", "Acerca de seleccionado en el menú de tres puntos");
