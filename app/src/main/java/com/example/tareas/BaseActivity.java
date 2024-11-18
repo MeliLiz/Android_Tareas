@@ -67,12 +67,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             displayFragment(new ConfigFragment());
 
         } else if (id == R.id.action_about) {
-            Log.d("MainActivity", "Acerca de seleccionado en el menú de tres puntos");
-            Toast.makeText(this, "Acerca de", Toast.LENGTH_SHORT).show();
+            displayFragment(new AboutFragment());
 
         } else if (id == R.id.action_logout) {
-            Log.d("MainActivity", "Cerrar sesión seleccionado en el menú de tres puntos");
-            Toast.makeText(this, "Cerrar sesión", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.profile) {
             displayFragment(new ProfileFragment());
@@ -87,14 +86,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.view_homeworks) {
             displayFragment(new HomeFragment());
-        } else if (id == R.id.view_resources) {
+        } /*else if (id == R.id.view_resources) {
             Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
             Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.add_homework) {
+        } */ else if (id == R.id.add_homework) {
             displayFragment(new AddHomeworkFragment());
         } else if (id == R.id.edit_homework) {
-            Log.d("MainActivity", "Editar tareas seleccionado del drawer menu");
-            Toast.makeText(this, "Editar tareas", Toast.LENGTH_SHORT).show();
+            displayFragment(new HomeFragment());
         } else {
             Log.d("MainActivity", "Elemento no reconocido seleccionado");
             Toast.makeText(this, "Elemento no reconocido", Toast.LENGTH_SHORT).show();
