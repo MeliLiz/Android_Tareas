@@ -16,8 +16,8 @@
     <string name="registro_usuario">Registro de usuario</string>
     <string name="nombre">Nombre</string>
     <string name="hint_nombre">Tu nombre aquí</string>
-    <string name="nacimiento">Fecha de nacimiento</string>
-    <string name="hint_fecha">Fecha</string>
+    <string name="email">Correo electrónico</string>
+    <string name="hint_email">tucorreo@ejemplo.com</string>
     <string name="usuario">Usuario</string>
     <string name="hint_usuario">Tu nombre de usuario</string>
     <string name="contraseña">Contraseña</string>
