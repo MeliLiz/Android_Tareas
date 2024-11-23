@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.login);
 
         Button login = findViewById(R.id.ingresar);
+        UserBDManager userBdd = new UserBDManager(this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,10 +29,15 @@ public class LoginActivity extends AppCompatActivity {
                 String userText = user.getText().toString();
                 String passText = pass.getText().toString();
 
-                if(userText.equals("admin") && passText.equals("123")){
+                userBdd.openForRead();
+                User us = userBdd.getUser(userText, passText);
+                userBdd.close();
+
+                if(us != null){
                     Intent intent = new Intent(LoginActivity.this, Root.class);
                     startActivity(intent);
                 }
+
 
             }
         });
