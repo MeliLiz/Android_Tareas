@@ -33,7 +33,8 @@ public class DBHelper extends SQLiteOpenHelper {
             COLUMN_NAME_USER + " TEXT NOT NULL, " +
             COLUMN_EMAIL_USER + " TEXT NOT NULL, " +
             COLUMN_USERNAME_USER + " TEXT NOT NULL, " +
-            COLUMN_PASSWORD_USER + "TEXT" + ");";
+            COLUMN_PASSWORD_USER + " TEXT" + ");";
+
 
     private static final String CREATE_TABLE_TASKS = "CREATE TABLE " + TABLE_TASKS + "(" +
             COLUMN_ID_TASK + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

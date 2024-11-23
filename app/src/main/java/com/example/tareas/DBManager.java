@@ -40,6 +40,10 @@ public class DBManager {
         db.insert(DBHelper.TABLE_TASKS, null, values);
     }
 
+    public Cursor getUsers(){
+        return db.query(DBHelper.TABLE_USERS, null, null, null, null, null, null);
+    }
+
     public Cursor getUserTasks(int userId){
         return db.query(DBHelper.TABLE_TASKS, null,
                 DBHelper.COLUMN_USER_ID_TASK + " = ?",
