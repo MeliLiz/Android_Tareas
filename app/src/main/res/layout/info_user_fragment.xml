@@ -42,13 +42,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/editTextText3"
+    <EditText
+        android:id="@+id/te_user"
         android:layout_width="281dp"
         android:layout_height="39dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:text="Juan Pérez"
+        android:enabled="false"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,15 +66,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintTop_toBottomOf="@+id/te_user" />
 
-    <TextView
-        android:id="@+id/editTextDate2"
+    <EditText
+        android:id="@+id/te_email"
         android:layout_width="281dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:text="07-07-2000"
+        android:enabled="false"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.423"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,15 +91,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+        app:layout_constraintTop_toBottomOf="@+id/te_email" />
 
-    <TextView
-        android:id="@+id/editTextText4"
+    <EditText
+        android:id="@+id/te_name"
         android:layout_width="281dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:text="Juan P"
+        android:enabled="false"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,15 +117,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+        app:layout_constraintTop_toBottomOf="@+id/te_name" />
 
-    <TextView
-        android:id="@+id/editTextNumberPassword3"
+    <EditText
+        android:id="@+id/te_pass"
         android:layout_width="281dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:ems="10"
-        android:text="************"
+        android:inputType="textPassword"
+        android:enabled="false"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,7 +142,7 @@
         android:layout_marginBottom="48dp"
         android:text="@string/editar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/te_pass"
         tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

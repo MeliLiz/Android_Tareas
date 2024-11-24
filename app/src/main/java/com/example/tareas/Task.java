@@ -1,5 +1,7 @@
 package com.example.tareas;
 
+import java.util.Date;
+
 public class Task {
     private int id;
     private String title;
@@ -77,5 +79,18 @@ public class Task {
                 ", status=" + status +
                 ", userId=" + userId +
                 '}';
+   }
+
+    public int compareTo(Task other) {
+        // convert the str duedate to date and compare them
+       Date date1 = new Date(this.dueDate);
+       Date date2 = new Date(other.dueDate);
+       if(date1.compareTo(date2) != 0){
+           return date1.compareTo(date2);
+       }
+       if(this.status != other.status){
+           return this.status - other.status; // The higher the status, the higher the priority
+       }
+       return this.title.compareTo(other.title);
    }
 }

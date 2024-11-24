@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Fecha límite: 20/11/2024"
             android:textSize="14sp"
-            android:textColor="#FF0000" />
+            android:textColor="#249728" />
 
     </LinearLayout>
 

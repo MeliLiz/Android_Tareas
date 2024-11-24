@@ -7,7 +7,10 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHolder> {
 
@@ -37,9 +40,21 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
     @Override
     public void onBindViewHolder(TareaViewHolder holder, int position) {
         Tarea tarea = tareaList.get(position);
+
         holder.tvTitle.setText(tarea.getTitle());
         holder.tvDescription.setText(tarea.getDescription());
         holder.tvDueDate.setText("Fecha límite: " + tarea.getDueDate());
+
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+            Date date = sdf.parse(tarea.getDueDate());
+            Date currentDate = new Date();
+            if(date != null && date.before(currentDate)){
+                holder.tvDueDate.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.red));
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override

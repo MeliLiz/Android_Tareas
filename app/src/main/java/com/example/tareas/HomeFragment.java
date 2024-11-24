@@ -14,7 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -39,6 +42,13 @@ public class HomeFragment extends Fragment {
         Log.d("HomeFragment", "Tareas del usuario: " + tasks);
         userBdd.close();
 
+        Collections.sort(tasks, new Comparator<Task>(){
+            @Override
+            public int compare(Task tarea1, Task tarea2){
+                return tarea1.compareTo(tarea2);
+            }
+        });
+
         if(tasks.isEmpty()){
             TextView noTasksText = view.findViewById(R.id.noTasksText);
             noTasksText.setVisibility(View.VISIBLE);
@@ -55,4 +65,6 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
+
+
 }

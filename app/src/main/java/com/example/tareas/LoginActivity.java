@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -35,12 +36,12 @@ public class LoginActivity extends AppCompatActivity {
                 userBdd.close();
 
                 if(us != null){
-                    Log.d("LoginActivity", "Usuario encontrado: " + us.toString());
+                    Toast.makeText(LoginActivity.this, "Bienvenido " + us.getName(), Toast.LENGTH_SHORT).show();
                     UserSession.getInstance().setUserId(us.getId());
                     Intent intent = new Intent(LoginActivity.this, Root.class);
                     startActivity(intent);
                 }else{
-                    Log.d("LoginActivity", "Usuario no encontrado");
+                    Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
 
 

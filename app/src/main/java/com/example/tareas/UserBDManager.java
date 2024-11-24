@@ -49,6 +49,23 @@ public class UserBDManager {
         return bdd.insert(UserBD.TABLA_USUARIOS, null, values);
     }
 
+    public User getUser(int id) {
+        User user = null;
+        Cursor cursor = bdd.query("usuario", new String[] {"id", "nombre", "email", "usuario", "password"}, "id = ?", new String[] {String.valueOf(id)}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            user = new User(
+                    cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("email")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("usuario")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("password"))
+            );
+            user.setId(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+        }
+        cursor.close();
+        return user;
+    }
+
     public User getUser(String username, String password){
         User user = null;
         Cursor cursor = bdd.query("usuario", new String[] {"id", "nombre", "email", "usuario", "password"}, "usuario = ? AND password = ?", new String[] {username, password}, null, null, null);

@@ -54,6 +54,13 @@ public class AddHomeworkFragment extends Fragment{
                 if(titulo.isEmpty() || descripcion.isEmpty() || fecha.isEmpty() || status1 == -1){
                     Toast.makeText(getContext(), "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else{
+                    if(status1 == R.id.prioridad_alta_rb){
+                        status1 = 3;
+                    } else if(status1 == R.id.prioridad_media_rb){
+                        status1 = 2;
+                    } else if(status1 == R.id.prioridad_baja_rb){
+                        status1 = 1;
+                    }
                     Task task = new Task(titulo, descripcion, fecha, status1, UserSession.getInstance().getUserId());
                     userBdd.openForWrite();
                     userBdd.insertTask(task);
