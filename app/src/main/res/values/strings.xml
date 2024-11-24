@@ -32,8 +32,8 @@
     <string name="acerca_de">Acerca de</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
 
-    <string name="ver_tareas">Ver tareas</string>
-    <string name="ver_recursos">Ver recursos</string>
+    <string name="ver_tareas">Tareas pendientes</string>
+    <string name="completadas">Tareas completadas</string>
     <string name="asignar_tarea">Agregar tarea</string>
     <string name="editar_tareas">Editar tareas</string>
 

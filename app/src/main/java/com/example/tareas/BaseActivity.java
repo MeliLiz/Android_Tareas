@@ -88,10 +88,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.view_homeworks) {
             displayFragment(new HomeFragment());
-        } /*else if (id == R.id.view_resources) {
-            Log.d("MainActivity", "Ver recursos seleccionado del drawer menu");
-            Toast.makeText(this, "Ver recursos", Toast.LENGTH_SHORT).show();
-        } */ else if (id == R.id.add_homework) {
+        } else if (id == R.id.view_completed) {
+            displayFragment(new CompletedTasksFragment());
+        } else if (id == R.id.add_homework) {
             displayFragment(new AddHomeworkFragment());
         } else if (id == R.id.edit_homework) {
             displayFragment(new HomeFragment());

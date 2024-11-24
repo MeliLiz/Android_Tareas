@@ -45,11 +45,14 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
         holder.tvDescription.setText(tarea.getDescription());
         holder.tvDueDate.setText("Fecha límite: " + tarea.getDueDate());
 
+
         try{
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             Date date = sdf.parse(tarea.getDueDate());
             Date currentDate = new Date();
-            if(date != null && date.before(currentDate)){
+            if(tarea.getStatus() == 1){
+                holder.tvDueDate.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.black));
+            }else if(date != null && date.before(currentDate)){
                 holder.tvDueDate.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.red));
             }
         } catch (Exception e){

@@ -14,12 +14,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class HomeFragment extends Fragment {
+public class CompletedTasksFragment extends Fragment {
     private RecyclerView recyclerView;
     private TareaAdapter adapter;
     private List<Tarea> tareaList;
@@ -36,9 +35,12 @@ public class HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewTareas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        TextView title = view.findViewById(R.id.tv_title);
+        title.setText(R.string.completadas);
+
         UserBDManager userBdd = new UserBDManager(requireContext());
         userBdd.openForRead();
-        ArrayList<Task> tasks = userBdd.getUserPendingTasks(UserSession.getInstance().getUserId());
+        ArrayList<Task> tasks = userBdd.getUserCompletedTasks(UserSession.getInstance().getUserId());
         Log.d("HomeFragment", "Tareas del usuario: " + tasks);
         userBdd.close();
 

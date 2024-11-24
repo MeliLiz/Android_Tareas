@@ -89,7 +89,7 @@ public class Task {
            return date1.compareTo(date2);
        }
        if(this.status != other.status){
-           return this.status - other.status; // The higher the status, the higher the priority
+           return other.status - this.status; // The higher the status, the higher the priority
        }
        return this.title.compareTo(other.title);
    }

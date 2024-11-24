@@ -8,10 +8,10 @@
         android:id="@+id/add_homework"
         android:icon="@drawable/add_homework"
         android:title="@string/asignar_tarea" />
-    <!-- <item
-        android:id="@+id/view_resources"
+    <item
+        android:id="@+id/view_completed"
         android:icon="@drawable/view_resources"
-        android:title="@string/ver_recursos" />-->
+        android:title="@string/completadas" />
     <item
         android:id="@+id/edit_homework"
         android:icon="@drawable/edit_homework"
