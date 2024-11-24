@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,7 +61,7 @@ public class HomeFragment extends Fragment {
             tareaList.add(new Tarea(task.getTitle(), task.getDescription(), task.getDueDate(), task.getStatus()));
         }
 
-        adapter = new TareaAdapter(tareaList);
+        adapter = new TareaAdapter(tareaList, true);
         recyclerView.setAdapter(adapter);
 
         return view;

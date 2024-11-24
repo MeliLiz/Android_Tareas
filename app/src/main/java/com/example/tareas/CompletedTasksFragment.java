@@ -62,7 +62,7 @@ public class CompletedTasksFragment extends Fragment {
             tareaList.add(new Tarea(task.getTitle(), task.getDescription(), task.getDueDate(), task.getStatus()));
         }
 
-        adapter = new TareaAdapter(tareaList);
+        adapter = new TareaAdapter(tareaList, false);
         recyclerView.setAdapter(adapter);
 
         return view;

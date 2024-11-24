@@ -26,6 +26,7 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="sun_image_desc">Imagen del sol</string>
+    <string name="no_tasks">No hay tareas por mostrar</string>"
     
     <string name="perfil">Perfil</string>
     <string name="ajustes">Ajustes</string>
