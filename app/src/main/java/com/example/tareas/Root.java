@@ -1,6 +1,7 @@
 package com.example.tareas;
 
 import android.os.Bundle;
+import android.util.Log;
 
 
 public class Root extends BaseActivity {
@@ -12,7 +13,11 @@ public class Root extends BaseActivity {
         setupToolbarAndDrawer();
 
         if (savedInstanceState == null){
-            displayFragment(new HomeFragment());
+            int user_id = UserSession.getInstance().getUserId();
+            Log.d("Root", "User ID: " + user_id);
+            if(user_id != -1){
+                displayFragment(new HomeFragment());
+            }
         }
     }
 }

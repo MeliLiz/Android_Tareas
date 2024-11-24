@@ -70,6 +70,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             displayFragment(new AboutFragment());
 
         } else if (id == R.id.action_logout) {
+            UserSession.getInstance().logout();
+            Log.d("MainActivity", UserSession.getInstance().getUserId() + "Logout");
             Intent intent = new Intent(BaseActivity.this, MainActivity.class);
             startActivity(intent);
 
