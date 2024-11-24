@@ -112,4 +112,22 @@ public class UserBDManager {
         cursor.close();
         return tasks;
     }
+
+    public ArrayList<Task> getUsertasks(int userId) {
+        ArrayList<Task> tasks = new ArrayList<>();
+        Cursor cursor = bdd.query("tarea", new String[] {"id", "titulo", "descripcion", "fecha_vencimiento", "estado", "id_usuario"}, "id_usuario = ?", new String[] {String.valueOf(userId)}, null, null, "id");
+
+        while (cursor.moveToNext()) {
+            Task task = new Task(
+                    cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("estado")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id_usuario"))
+            );
+            tasks.add(task);
+        }
+        cursor.close();
+        return tasks;
+    }
 }
