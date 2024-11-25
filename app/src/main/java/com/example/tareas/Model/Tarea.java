@@ -11,7 +11,6 @@ public class Tarea {
         this.description = description;
         this.dueDate = dueDate;
         this.status = status;
-
     }
 
     public String getTitle() {

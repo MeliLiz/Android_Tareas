@@ -35,6 +35,11 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        boolean nightMode = preferences.getBoolean(NIGHT_MODE_KEY, false);
+        setMode(nightMode);
+
     }
 
     // Método para configurar la Toolbar y Drawer
@@ -90,27 +95,30 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
             preferences.edit().putInt("user_id", -1).apply();
+            preferences.edit().putBoolean(NIGHT_MODE_KEY, false).apply();
             Intent intent = new Intent(BaseActivity.this, MainActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.night_mode) {
             SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
             boolean nightMode = preferences.getBoolean(NIGHT_MODE_KEY, false);
-
-            if (nightMode) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }
-
+            Toast.makeText(this, "Cambiando al modo " + (nightMode ? "día" : "noche"), Toast.LENGTH_SHORT).show();
             preferences.edit().putBoolean(NIGHT_MODE_KEY, !nightMode).apply();
-            recreate();
+            setMode(!nightMode);
 
         }  else if (id == R.id.profile) {
             displayFragment(new ProfileFragment());
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setMode(boolean nightMode) {
+        AppCompatDelegate.setDefaultNightMode(
+                nightMode ? AppCompatDelegate.MODE_NIGHT_YES : AppCompatDelegate.MODE_NIGHT_NO
+        );
+        // Cambiar de tema sin recrear explícitamente
+        getDelegate().applyDayNight();
     }
 
 
