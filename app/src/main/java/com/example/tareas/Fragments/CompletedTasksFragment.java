@@ -1,11 +1,10 @@
-package com.example.tareas;
+package com.example.tareas.Fragments;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,13 +13,19 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tareas.R;
+import com.example.tareas.Model.Tarea;
+import com.example.tareas.Adapter.TareaAdapter;
+import com.example.tareas.Model.Task;
+import com.example.tareas.DB.UserBDManager;
+import com.example.tareas.Session.UserSession;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class HomeFragment extends Fragment {
+public class CompletedTasksFragment extends Fragment {
     private RecyclerView recyclerView;
     private TareaAdapter adapter;
     private List<Tarea> tareaList;
@@ -37,9 +42,12 @@ public class HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerViewTareas);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        TextView title = view.findViewById(R.id.tv_title);
+        title.setText(R.string.completadas);
+
         UserBDManager userBdd = new UserBDManager(requireContext());
         userBdd.openForRead();
-        ArrayList<Task> tasks = userBdd.getUserPendingTasks(UserSession.getInstance().getUserId());
+        ArrayList<Task> tasks = userBdd.getUserCompletedTasks(UserSession.getInstance().getUserId());
         Log.d("HomeFragment", "Tareas del usuario: " + tasks);
         userBdd.close();
 
@@ -61,7 +69,7 @@ public class HomeFragment extends Fragment {
             tareaList.add(new Tarea(task.getTitle(), task.getDescription(), task.getDueDate(), task.getStatus()));
         }
 
-        adapter = new TareaAdapter(tareaList, true);
+        adapter = new TareaAdapter(tareaList, false);
         recyclerView.setAdapter(adapter);
 
         return view;

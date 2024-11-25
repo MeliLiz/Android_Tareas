@@ -1,7 +1,6 @@
 package com.example.tareas;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,8 +10,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.tareas.DB.UserBDManager;
+import com.example.tareas.Model.Task;
+import com.example.tareas.Model.User;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
     @Override

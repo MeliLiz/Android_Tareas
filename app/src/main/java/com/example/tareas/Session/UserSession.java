@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.Session;
 
 public class UserSession {
     private static UserSession instance;

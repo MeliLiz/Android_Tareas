@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.DB;
 
 
 import android.content.ContentValues;
@@ -6,6 +6,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.example.tareas.Model.Task;
+import com.example.tareas.Model.User;
 
 import java.util.ArrayList;
 

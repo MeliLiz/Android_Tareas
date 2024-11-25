@@ -1,8 +1,10 @@
 package com.example.tareas;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.tareas.Fragments.HomeFragment;
+import com.example.tareas.Session.UserSession;
 
 
 public class Root extends BaseActivity {

@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

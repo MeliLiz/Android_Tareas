@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.Model;
 
 import java.util.Date;
 

@@ -1,7 +1,6 @@
-package com.example.tareas;
+package com.example.tareas.Fragments;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.tareas.R;
+import com.example.tareas.Model.Task;
+import com.example.tareas.DB.UserBDManager;
+import com.example.tareas.Session.UserSession;
 
 import java.util.Calendar;
 

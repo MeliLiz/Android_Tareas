@@ -16,6 +16,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.fragment.app.Fragment;
 
+import com.example.tareas.Fragments.AboutFragment;
+import com.example.tareas.Fragments.AddHomeworkFragment;
+import com.example.tareas.Fragments.CompletedTasksFragment;
+import com.example.tareas.Fragments.ConfigFragment;
+import com.example.tareas.Fragments.HomeFragment;
+import com.example.tareas.Fragments.ProfileFragment;
+import com.example.tareas.Session.UserSession;
 import com.google.android.material.navigation.NavigationView;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

@@ -3,7 +3,6 @@ package com.example.tareas;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +10,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.tareas.DB.UserBDManager;
+import com.example.tareas.Model.User;
+import com.example.tareas.Session.UserSession;
 
 public class LoginActivity extends AppCompatActivity {
     private DrawerLayout drawer;

@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tareas.OptionAdapter;
+import com.example.tareas.Adapter.OptionAdapter;
 import com.example.tareas.R;
 
 import java.util.Arrays;

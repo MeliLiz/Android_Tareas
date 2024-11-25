@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.Model;
 
 public class User {
     private int id;
