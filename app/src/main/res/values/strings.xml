@@ -54,6 +54,7 @@
         <item>Opción 4</item>
     </string-array>
 
+    <string name="night">Cambiar tema</string>"
     <string name="Text_acerca_de">Nuestra app está diseñada para ayudarte a gestionar tu tiempo y maximizar tu productividad. Con herramientas intuitivas como la creación de listas de tareas, recordatorios personalizados, y una interfaz visual para organizar tu día, queremos que logres un equilibrio perfecto entre tus responsabilidades y tu tiempo personal.
 
 Ya sea que estés estudiando, trabajando o simplemente organizando tu rutina diaria, nuestra misión es brindarte un aliado confiable para alcanzar tus metas de manera más eficiente y sin estrés. ¡Comienza a transformar tu tiempo hoy mismo!</string>

@@ -1,10 +1,12 @@
 package com.example.tareas;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
 
 public class Root extends BaseActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,4 +22,5 @@ public class Root extends BaseActivity {
             }
         }
     }
+
 }
