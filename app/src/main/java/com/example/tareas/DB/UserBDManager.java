@@ -103,6 +103,20 @@ public class UserBDManager {
         return users;
     }
 
+    public Boolean updateUser(int id, User user) {
+        User savedUser = getUser(id);
+        if (savedUser == null || savedUser.equals(user)){
+            return false;
+        }
+        ContentValues values = new ContentValues();
+        values.put("nombre", user.getName());
+        values.put("email", user.getEmail());
+        values.put("usuario", user.getUsername());
+        values.put("password", user.getPassword());
+        bdd.update("usuario", values, "id = ?", new String[] {String.valueOf(id)});
+        return true;
+    }
+
     // Methods for tasks
     public long insertTask(Task task) {
         ContentValues values = new ContentValues();
@@ -184,4 +198,6 @@ public class UserBDManager {
         cursor.close();
         return tasks;
     }
+
+
 }

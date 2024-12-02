@@ -7,4 +7,5 @@
     <color name="primaryColor">#6200EE</color>
     <color name="primaryColorDark">#3700B3</color>
     <color name="drawer">#6200EE</color>
+    <color name="iconColor">#000000</color>"
 </resources>

@@ -65,4 +65,13 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+    public Boolean equals(User user){
+        if (user == null) return false;
+        if (user.getName().equals(this.getName()) && user.getEmail().equals(this.getEmail()) && user.getUsername().equals(this.getUsername()) && user.getPassword().equals(this.getPassword())){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
