@@ -134,6 +134,7 @@ public class UserBDManager {
 
         while (cursor.moveToNext()) {
             Task task = new Task(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                     cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
                     cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
@@ -153,6 +154,7 @@ public class UserBDManager {
 
         while (cursor.moveToNext()) {
             Task task = new Task(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                     cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
                     cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
@@ -170,6 +172,7 @@ public class UserBDManager {
         Cursor cursor = bdd.query("tarea", new String[] {"id", "titulo", "descripcion", "fecha_vencimiento", "estado", "id_usuario"}, "id_usuario = ? AND (estado = 2 OR estado = 3)", new String[] {String.valueOf(userId)}, null, null, "id");
         while (cursor.moveToNext()) {
             Task task = new Task(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                     cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
                     cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
@@ -197,6 +200,42 @@ public class UserBDManager {
         }
         cursor.close();
         return tasks;
+    }
+
+    public Task getTask(int id) {
+        Task task = null;
+
+        Cursor cursor = bdd.query("tarea", new String[] {"id", "titulo", "descripcion", "fecha_vencimiento", "estado", "id_usuario"}, "id = ?", new String[] {String
+                .valueOf(id)}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            task = new Task(
+                    cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("estado")),
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id_usuario"))
+            );
+            task.setId(cursor.getInt(cursor.getColumnIndexOrThrow("id")));
+        }
+        cursor.close();
+        return task;
+    }
+
+    public Boolean updateTask(int idOriginal, Task task) {
+        Log.d("updateTask", String.valueOf(idOriginal));
+        Task original = getTask(idOriginal);
+        if(original == null || task == null || original.equals(task)){
+            return false;
+        }
+        ContentValues values = new ContentValues();
+        values.put("titulo", task.getTitle());
+        values.put("descripcion", task.getDescription());
+        values.put("fecha_vencimiento", task.getDueDate());
+        values.put("estado", task.getStatus());
+        values.put("id_usuario", task.getUserId());
+        bdd.update("tarea", values, "id = ?", new String[] {String.valueOf(idOriginal)});
+        return true;
     }
 
 

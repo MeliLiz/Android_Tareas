@@ -66,7 +66,7 @@ public class CompletedTasksFragment extends Fragment {
 
         tareaList = new ArrayList<>();
         for (Task task : tasks) {
-            tareaList.add(new Tarea(task.getTitle(), task.getDescription(), task.getDueDate(), task.getStatus()));
+            tareaList.add(new Tarea(task.getId(), task.getTitle(), task.getDescription(), task.getDueDate(), task.getStatus()));
         }
 
         adapter = new TareaAdapter(tareaList, false);

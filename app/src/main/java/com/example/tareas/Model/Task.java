@@ -1,5 +1,7 @@
 package com.example.tareas.Model;
 
+import android.util.Log;
+
 import java.util.Date;
 
 public class Task {
@@ -12,6 +14,15 @@ public class Task {
 
 
     public Task(String title, String description, String dueDate, int status, int userId) {
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.status = status;
+        this.userId = userId;
+    }
+
+    public Task(int id, String title, String description, String dueDate, int status, int userId) {
+        this.id = id;
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -93,4 +104,11 @@ public class Task {
        }
        return this.title.compareTo(other.title);
    }
+
+    public Boolean equals(Task other){
+        return this.title.equals(other.title) &&
+                this.description.equals(other.description) &&
+                this.dueDate.equals(other.dueDate) && this.status == other.status &&
+                this.userId == other.userId;
+    }
 }

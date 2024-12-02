@@ -37,6 +37,7 @@
     <string name="completadas">Tareas completadas</string>
     <string name="asignar_tarea">Agregar tarea</string>
     <string name="editar_tareas">Editar tareas</string>
+    <string name="editar_tarea">Editar tarea</string>
 
     <string name="appNname">Tareas</string>"
 

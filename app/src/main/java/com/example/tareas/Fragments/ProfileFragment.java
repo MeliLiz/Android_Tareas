@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment {
     private ImageView editEmail;
     private ImageView editName;
     private ImageView editPass;
-    private Boolean updating = false;
+    private int updating = 0;
 
     @Nullable
     @Override
@@ -51,12 +51,11 @@ public class ProfileFragment extends Fragment {
 
         if(user == null){
             return null;
-        } else{
-            Log.d("ProfileFragment", user.toString());
         }
 
-        guardar = view.findViewById(R.id.editar);
 
+        guardar = view.findViewById(R.id.editar);
+        updateButtonState();
         name = view.findViewById(R.id.te_user);
         email = view.findViewById(R.id.te_email);
         username = view.findViewById(R.id.te_name);
@@ -78,10 +77,12 @@ public class ProfileFragment extends Fragment {
                 if(name.isEnabled()){
                     name.setText(user.getName());
                     name.setEnabled(false);
+                    updating -= 1;
                 }else{
                     name.setEnabled(true);
-                    updating = true;
+                    updating += 1;
                 }
+                updateButtonState();
             }
         });
 
@@ -91,10 +92,12 @@ public class ProfileFragment extends Fragment {
                 if(email.isEnabled()){
                     email.setText(user.getEmail());
                     email.setEnabled(false);
+                    updating -= 1;
                 }else{
                     email.setEnabled(true);
-                    updating = true;
+                    updating += 1;
                 }
+                updateButtonState();
             }
         });
 
@@ -104,10 +107,12 @@ public class ProfileFragment extends Fragment {
                 if(username.isEnabled()){
                     username.setText(user.getUsername());
                     username.setEnabled(false);
+                    updating -= 1;
                 }else{
                     username.setEnabled(true);
-                    updating = true;
+                    updating += 1;
                 }
+                updateButtonState();
             }
         });
 
@@ -117,18 +122,19 @@ public class ProfileFragment extends Fragment {
                 if(password.isEnabled()){
                     password.setText(user.getPassword());
                     password.setEnabled(false);
+                    updating -= 1;
                 }else{
                     password.setEnabled(true);
-                    updating = true;
+                    updating += 1;
                 }
+                updateButtonState();
             }
         });
 
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (updating){
+                if (updating != 0){
                     User modified = new User(
                             name.getText().toString(),
                             email.getText().toString(),
@@ -153,8 +159,14 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
-
-
         return view;
+    }
+
+    private void updateButtonState() {
+        if (updating == 0) {
+            guardar.setEnabled(false);
+        } else {
+            guardar.setEnabled(true);
+        }
     }
 }

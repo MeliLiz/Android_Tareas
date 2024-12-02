@@ -1,5 +1,7 @@
 package com.example.tareas.Adapter;
 
+import android.app.Activity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,8 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tareas.BaseActivity;
+import com.example.tareas.DB.UserBDManager;
+import com.example.tareas.Fragments.EditTaskFragment;
 import com.example.tareas.Model.Tarea;
 import com.example.tareas.R;
 
@@ -63,10 +69,17 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
         // Mostrar u ocultar botones según el valor de showButtons
         if (showButtons) {
             holder.btnContainer.setVisibility(View.VISIBLE);
+            Fragment editTaskFragment = new EditTaskFragment();
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("task", tarea);
+            editTaskFragment.setArguments(bundle);
+
             holder.btnEditTask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(holder.itemView.getContext(), "Editar tarea", Toast.LENGTH_SHORT).show();
+                    BaseActivity parent = (BaseActivity) holder.itemView.getContext();
+                    parent.displayFragment(editTaskFragment);
                 }
             });
 

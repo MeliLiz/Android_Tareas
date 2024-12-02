@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.tareas.Commons.Functions;
 import com.example.tareas.R;
 import com.example.tareas.Model.Task;
 import com.example.tareas.DB.UserBDManager;
@@ -28,6 +29,7 @@ public class AddHomeworkFragment extends Fragment{
     private EditText date;
     private RadioGroup status;
     private Button add;
+    private Functions fun = new Functions();
 
     @Nullable
     @Override
@@ -46,7 +48,7 @@ public class AddHomeworkFragment extends Fragment{
         status = view.findViewById(R.id.radioGroup2);
         add = view.findViewById(R.id.agregar_tarea_bt);
 
-        date.setOnClickListener(v -> showDatePicker()); // Set a listener to pick the date
+        date.setOnClickListener(v -> fun.showDatePicker(requireContext(), date)); // Set a listener to pick the date
 
         add.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -80,27 +82,4 @@ public class AddHomeworkFragment extends Fragment{
 
         return view;
     }
-
-    private void showDatePicker() {
-        //get the current date
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        // Show the datepicker
-        DatePickerDialog datePickerDialog = new DatePickerDialog(requireContext(), new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                // Update the selected date in the EditText
-                String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
-                date.setText(selectedDate);
-            }
-        }, year, month, day);
-
-        datePickerDialog.show();
-    }
-
-
-
 }
