@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.tareas.BaseActivity;
 import com.example.tareas.Commons.Functions;
 import com.example.tareas.R;
 import com.example.tareas.Model.Task;
@@ -72,10 +73,15 @@ public class AddHomeworkFragment extends Fragment{
                     userBdd.insertTask(task);
                     userBdd.close();
                     Toast.makeText(getContext(), "Tarea agregada con éxito", Toast.LENGTH_SHORT).show();
-                    title.setText("");
-                    description.setText("");
-                    date.setText("");
-                    status.clearCheck();
+                    BaseActivity parent = (BaseActivity) getActivity();
+                    if (parent != null) {
+                        parent.displayFragment(new HomeFragment());
+                    } else{
+                        title.setText("");
+                        description.setText("");
+                        date.setText("");
+                        status.clearCheck();
+                    }
                 }
             }
         });
