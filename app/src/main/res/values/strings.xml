@@ -3,21 +3,22 @@
     <string name="saludo">¡Bienvenido!</string>
     <string name="description">Elige una opción para continuar</string>
     <string name="pendant">Tareas pendientes</string>
-    <string name="titulo_gestion">Gestión de tareas</string>
+    <string name="titulo_gestion">Agregar tarea</string>
     <string name="nombre_tarea">Título de la tarea</string>
+    <string name="due_date">Fecha de entrega</string>"
     <string name="titulo_hint">Título</string>
-    <string name="tarea_modalidad">Modalidad de la tarea</string>
-    <string name="equipo">En equipo</string>
-    <string name="prioridad">Prioridad</string>
-    <string name="alta">Alta</string>
-    <string name="media">Media</string>
-    <string name="baja">Baja</string>
+    <string name="descripcion">Descripción</string>
+    <string name="dd">DD/MM/AAAA</string>
+    <string name="prioridad">Status</string>
+    <string name="alta">Urgente</string>
+    <string name="media">Normal</string>
+    <string name="baja">Realizada</string>
     <string name="agregar">Agregar tarea</string>
     <string name="registro_usuario">Registro de usuario</string>
     <string name="nombre">Nombre</string>
     <string name="hint_nombre">Tu nombre aquí</string>
-    <string name="nacimiento">Fecha de nacimiento</string>
-    <string name="hint_fecha">Fecha</string>
+    <string name="email">Correo electrónico</string>
+    <string name="hint_email">tucorreo@ejemplo.com</string>
     <string name="usuario">Usuario</string>
     <string name="hint_usuario">Tu nombre de usuario</string>
     <string name="contraseña">Contraseña</string>
@@ -25,23 +26,25 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
     <string name="sun_image_desc">Imagen del sol</string>
+    <string name="no_tasks">No hay tareas por mostrar</string>"
     
     <string name="perfil">Perfil</string>
     <string name="ajustes">Ajustes</string>
     <string name="acerca_de">Acerca de</string>
     <string name="cerrar_sesion">Cerrar sesión</string>
 
-    <string name="ver_tareas">Ver tareas</string>
-    <string name="ver_recursos">Ver recursos</string>
+    <string name="ver_tareas">Tareas pendientes</string>
+    <string name="completadas">Tareas completadas</string>
     <string name="asignar_tarea">Agregar tarea</string>
     <string name="editar_tareas">Editar tareas</string>
+    <string name="editar_tarea">Editar tarea</string>
 
     <string name="appNname">Tareas</string>"
 
     <string name="login">Iniciar sesión</string>
 
     <string name="user_details">Detalles de usuario</string>
-    <string name="editar">Editar</string>
+    <string name="editar">Guardar</string>
 
     <string name="opcion">Option</string>
 
@@ -52,6 +55,7 @@
         <item>Opción 4</item>
     </string-array>
 
+    <string name="night">Cambiar tema</string>"
     <string name="Text_acerca_de">Nuestra app está diseñada para ayudarte a gestionar tu tiempo y maximizar tu productividad. Con herramientas intuitivas como la creación de listas de tareas, recordatorios personalizados, y una interfaz visual para organizar tu día, queremos que logres un equilibrio perfecto entre tus responsabilidades y tu tiempo personal.
 
 Ya sea que estés estudiando, trabajando o simplemente organizando tu rutina diaria, nuestra misión es brindarte un aliado confiable para alcanzar tus metas de manera más eficiente y sin estrés. ¡Comienza a transformar tu tiempo hoy mismo!</string>

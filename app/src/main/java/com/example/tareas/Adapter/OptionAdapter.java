@@ -1,4 +1,4 @@
-package com.example.tareas;
+package com.example.tareas.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

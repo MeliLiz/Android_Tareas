@@ -64,7 +64,7 @@
             android:layout_width="279dp"
             android:layout_height="28dp"
             android:layout_marginTop="30dp"
-            android:text="@string/nacimiento"
+            android:text="@string/email"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
