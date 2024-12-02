@@ -18,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.tareas.BaseActivity;
 import com.example.tareas.Commons.Functions;
 import com.example.tareas.Model.Tarea;
 import com.example.tareas.R;
@@ -188,14 +189,19 @@ public class EditTaskFragment extends Fragment{
                 }
                 bdManager.close();
 
-                editing = 0;
-                title.setEnabled(false);
-                description.setEnabled(false);
-                date.setEnabled(false);
-                for (int i = 0; i < status.getChildCount(); i++) {
-                    status.getChildAt(i).setEnabled(false);
+                BaseActivity parent = (BaseActivity) getActivity();
+                if(parent != null){
+                    parent.displayFragment(new HomeFragment());
+                } else{
+                    editing = 0;
+                    title.setEnabled(false);
+                    description.setEnabled(false);
+                    date.setEnabled(false);
+                    for (int i = 0; i < status.getChildCount(); i++) {
+                        status.getChildAt(i).setEnabled(false);
+                    }
+                    status.setEnabled(false);
                 }
-                status.setEnabled(false);
             }
         });
 
