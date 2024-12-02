@@ -1,6 +1,10 @@
 package com.example.tareas.Adapter;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,7 +81,6 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
             holder.btnEditTask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(holder.itemView.getContext(), "Editar tarea", Toast.LENGTH_SHORT).show();
                     BaseActivity parent = (BaseActivity) holder.itemView.getContext();
                     parent.displayFragment(editTaskFragment);
                 }
@@ -86,7 +89,8 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
             holder.btnDeleteTask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(holder.itemView.getContext(), "Eliminar tarea", Toast.LENGTH_SHORT).show();
+                    //Show dialog
+                    showDeleteConfirmationDialog(tarea.getId(), holder.itemView.getContext());
                 }
             });
 
@@ -94,7 +98,7 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
             holder.btnContainer.setVisibility(View.GONE);
         }
 
-        // Configuración del color de la fecha
+        // Change color (due date) depending on the due date
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             Date date = sdf.parse(tarea.getDueDate());
@@ -113,4 +117,29 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
     public int getItemCount() {
         return tareaList.size();
     }
+
+    private void showDeleteConfirmationDialog(int taskId, Context context) {
+        new AlertDialog.Builder(context)
+                .setTitle("Confirmar eliminación")
+                .setMessage("¿Estás seguro de que deseas eliminar esta tarea?")
+                .setPositiveButton("Eliminar", (dialog, which) -> {
+                    deleteTask(taskId, context);
+                    Toast.makeText(context, "Tarea eliminada", Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("Cancelar", (dialog, which) -> {
+                    dialog.dismiss();
+                })
+                .create()
+                .show();
+    }
+
+    private void deleteTask(int taskId, Context context) {
+        UserBDManager userBdd = new UserBDManager(context);
+        userBdd.openForWrite();
+        userBdd.deleteTask(taskId);
+        userBdd.close();
+        tareaList.removeIf(tarea -> tarea.getId() == taskId);
+        notifyDataSetChanged();
+    }
+
 }

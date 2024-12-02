@@ -190,6 +190,7 @@ public class UserBDManager {
         Cursor cursor = bdd.query("tarea", new String[] {"id", "titulo", "descripcion", "fecha_vencimiento", "estado", "id_usuario"}, "id_usuario = ? AND estado = 1", new String[] {String.valueOf(userId)}, null, null, "id");
         while (cursor.moveToNext()) {
             Task task = new Task(
+                    cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                     cursor.getString(cursor.getColumnIndexOrThrow("titulo")),
                     cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fecha_vencimiento")),
@@ -235,6 +236,15 @@ public class UserBDManager {
         values.put("estado", task.getStatus());
         values.put("id_usuario", task.getUserId());
         bdd.update("tarea", values, "id = ?", new String[] {String.valueOf(idOriginal)});
+        return true;
+    }
+
+    public Boolean deleteTask(int id) {
+        Task task = getTask(id);
+        if(task == null){
+            return false;
+        }
+        bdd.delete("tarea", "id = ?", new String[] {String.valueOf(id)});
         return true;
     }
 
