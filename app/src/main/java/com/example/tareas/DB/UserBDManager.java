@@ -44,7 +44,6 @@ public class UserBDManager {
 
     public long insertUser(User user) {
         ContentValues values = new ContentValues();
-        Log.d(user.toString(), "User");
         values.put("nombre", user.getName());
         values.put("email", user.getEmail());
         values.put("usuario", user.getUsername());
@@ -224,7 +223,6 @@ public class UserBDManager {
     }
 
     public Boolean updateTask(int idOriginal, Task task) {
-        Log.d("updateTask", String.valueOf(idOriginal));
         Task original = getTask(idOriginal);
         if(original == null || task == null || original.equals(task)){
             return false;

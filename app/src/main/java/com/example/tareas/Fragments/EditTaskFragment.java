@@ -96,11 +96,9 @@ public class EditTaskFragment extends Fragment{
                     title.setText(taskToEdit.getTitle());
                     title.setEnabled(false);
                     editing -= 1;
-                    Log.d("editing", editing + "");
                 } else {
                     title.setEnabled(true);
                     editing += 1;
-                    Log.d("editing", editing + "");
                 }
                 updateButtonState();
             }
@@ -113,11 +111,9 @@ public class EditTaskFragment extends Fragment{
                     description.setText(taskToEdit.getDescription());
                     description.setEnabled(false);
                     editing -= 1;
-                    Log.d("editing", editing + "");
                 }else {
                     description.setEnabled(true);
                     editing += 1;
-                    Log.d("editing", editing + "");
                 }
                 updateButtonState();
             }
@@ -130,11 +126,9 @@ public class EditTaskFragment extends Fragment{
                     date.setText(taskToEdit.getDueDate());
                     date.setEnabled(false);
                     editing -= 1;
-                    Log.d("editing", editing + "");
                 } else {
                     date.setEnabled(true);
                     editing += 1;
-                    Log.d("editing", editing + "");
                 }
                 updateButtonState();
             }
@@ -149,14 +143,12 @@ public class EditTaskFragment extends Fragment{
                     }
                     status.setEnabled(false);
                     editing -= 1;
-                    Log.d("editing", editing + "");
                 } else {
                     status.setEnabled(true);
                     for (int i = 0; i < status.getChildCount(); i++) {
                         status.getChildAt(i).setEnabled(true);
                     }
                     editing += 1;
-                    Log.d("editing", editing + "");
                 }
                 updateButtonState();
             }
@@ -165,7 +157,6 @@ public class EditTaskFragment extends Fragment{
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("editing", editing + "");
                 UserBDManager bdManager = new UserBDManager(requireContext());
                 bdManager.openForWrite();
                 int status1 = status.getCheckedRadioButtonId();

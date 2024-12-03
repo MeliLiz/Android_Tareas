@@ -48,7 +48,6 @@ public class CompletedTasksFragment extends Fragment {
         UserBDManager userBdd = new UserBDManager(requireContext());
         userBdd.openForRead();
         ArrayList<Task> tasks = userBdd.getUserCompletedTasks(UserSession.getInstance().getUserId());
-        Log.d("HomeFragment", "Tareas del usuario: " + tasks);
         userBdd.close();
 
         Collections.sort(tasks, new Comparator<Task>(){

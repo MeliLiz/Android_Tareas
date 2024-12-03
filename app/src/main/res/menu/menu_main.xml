@@ -6,16 +6,17 @@
         android:icon="@drawable/baseline_person_24"
         app:showAsAction="ifRoom" />
 
-    <item
+    <!---<item
         android:id="@+id/action_settings"
         android:title="@string/ajustes"
         android:icon="@drawable/baseline_manage_accounts_24"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom" />-->
 
     <item
         android:id="@+id/night_mode"
         android:title="@string/night"
-        app:showAsAction="never" />
+        android:icon="@drawable/day_night"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_about"

@@ -18,11 +18,11 @@ public class Root extends BaseActivity {
 
         if (savedInstanceState == null){
             int user_id = UserSession.getInstance().getUserId();
-            Log.d("Root", "User ID: " + user_id);
             if(user_id != -1){
                 displayFragment(new HomeFragment());
+            }else{
+                Log.e("Root", "No se encontró el usuario");
             }
         }
     }
-
 }

@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_user_register);
 
-        // Inicializar UserBDManager con el contexto
+        // Initialize the UserBDManager
         UserBDManager userBdd = new UserBDManager(this);
 
         Button registrar = findViewById(R.id.register);
@@ -45,9 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
                     ArrayList<Task> tasks = userBdd.getTasks();
                     userBdd.close();
 
-                    // Opcional: Puedes agregar un Log o mensaje para mostrar usuarios recuperados.
-                    Log.d("RegisterActivity", "Usuarios registrados: " + users);
-                    Log.d("RegisterActivity", "Tareas registradas: " + tasks);
                 } else {
                     userBdd.openForWrite();
                     User us = new User(nombre, email, usuario, pass);

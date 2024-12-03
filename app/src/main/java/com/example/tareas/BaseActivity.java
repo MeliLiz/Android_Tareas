@@ -84,15 +84,14 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
+        /*if (id == R.id.action_settings) {
             displayFragment(new ConfigFragment());
 
-        } else if (id == R.id.action_about) {
+        } else*/ if (id == R.id.action_about) {
             displayFragment(new AboutFragment());
 
         } else if (id == R.id.action_logout) {
             UserSession.getInstance().logout();
-            Log.d("MainActivity", UserSession.getInstance().getUserId() + "Logout");
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
             preferences.edit().putInt("user_id", -1).apply();
@@ -137,7 +136,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.edit_homework) {
             displayFragment(new HomeFragment());
         } else {
-            Log.d("MainActivity", "Elemento no reconocido seleccionado");
             Toast.makeText(this, "Elemento no reconocido", Toast.LENGTH_SHORT).show();
         }
 
