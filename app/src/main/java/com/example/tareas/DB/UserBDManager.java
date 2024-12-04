@@ -239,13 +239,42 @@ public class UserBDManager {
         return true;
     }
 
-    public Boolean deleteTask(int id) {
+    public boolean deleteTask(int id) {
         Task task = getTask(id);
         if(task == null){
             return false;
         }
         bdd.delete("tarea", "id = ?", new String[] {String.valueOf(id)});
         return true;
+    }
+
+    public boolean deleteAllTasksForUser(int userId) {
+        if (bdd == null || !bdd.isOpen()) {
+            throw new IllegalStateException("Base de datos no inicializada. Llama a openForWrite() antes de este método.");
+        }
+
+        int rowsDeleted = bdd.delete("tarea", "id_usuario = ?", new String[]{String.valueOf(userId)});
+        return rowsDeleted > 0;
+    }
+
+    public boolean deleteCompletedTasksForUser(int userId) {
+
+        int rowsAffected = bdd.delete(
+                "tarea", // Tabla
+                "id_usuario = ? AND estado = ?", // Condiciones
+                new String[]{String.valueOf(userId), "1"} // Argumentos (estatus 3 = completado)
+        );
+        bdd.close();
+        return rowsAffected > 0;
+    }
+
+    public boolean deleteUserById(int userId) {
+        int rowsAffected = bdd.delete(
+                "usuario", // Asegúrate de que este sea el nombre correcto de la tabla de usuarios
+                "id = ?", // Condición para identificar al usuario
+                new String[]{String.valueOf(userId)} // ID del usuario
+        );
+        return rowsAffected > 0;
     }
 
 
