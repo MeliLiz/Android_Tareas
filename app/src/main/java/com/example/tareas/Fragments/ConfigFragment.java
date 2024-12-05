@@ -2,6 +2,7 @@ package com.example.tareas.Fragments;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -70,7 +71,7 @@ public class ConfigFragment extends Fragment {
             @Override
             public void onItemClick(String option) {
                 UserBDManager dbManager = new UserBDManager(requireContext());
-                if (option.equals("Exportar Tareas")) {
+                /*if (option.equals("Exportar Tareas")) {
                     dbManager.openForRead();
 
                     List<Task> tasks = dbManager.getUsertasks(userId); // Obtener las tareas del usuario
@@ -88,7 +89,7 @@ public class ConfigFragment extends Fragment {
                         Toast toast = Toast.makeText(requireContext(), "SIN TAREAS", Toast.LENGTH_SHORT);
                         toast.show();
                     }
-                } else if (option.equals("Eliminar Todas las tareas")) {
+                } else*/ if (option.equals("Eliminar Todas las tareas")) {
                     // Abrir la base de datos en modo escritura antes de realizar la operación
                     dbManager.openForWrite();
 

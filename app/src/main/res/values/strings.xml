@@ -49,7 +49,7 @@
     <string name="opcion">Option</string>
 
     <string-array name="options">
-        <item>Exportar Tareas</item>
+        <!--<item>Exportar Tareas</item>-->
         <item>Eliminar Todas las tareas</item>
         <item>Eliminar Todas las tareas completadas</item>
         <item>Eliminar Cuenta</item>
