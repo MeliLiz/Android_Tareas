@@ -13,7 +13,7 @@
         android:icon="@drawable/view_resources"
         android:title="@string/completadas" />
     <item
-        android:id="@+id/edit_homework"
-        android:icon="@drawable/edit_homework"
-        android:title="@string/editar_tareas" />
+        android:id="@+id/about"
+        android:icon="@drawable/baseline_coffee_24"
+        android:title="@string/acerca_de" />
 </menu>

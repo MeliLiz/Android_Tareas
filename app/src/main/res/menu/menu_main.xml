@@ -7,15 +7,15 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/ajustes"
-        android:icon="@drawable/baseline_manage_accounts_24"
-        app:showAsAction="ifRoom" />
-
-    <item
         android:id="@+id/night_mode"
         android:title="@string/night"
         android:icon="@drawable/day_night"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/ajustes"
+        android:icon="@drawable/baseline_manage_accounts_24"
         app:showAsAction="ifRoom" />
 
     <item

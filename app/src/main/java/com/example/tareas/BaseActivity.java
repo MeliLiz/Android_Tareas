@@ -133,8 +133,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             displayFragment(new CompletedTasksFragment());
         } else if (id == R.id.add_homework) {
             displayFragment(new AddHomeworkFragment());
-        } else if (id == R.id.edit_homework) {
-            displayFragment(new HomeFragment());
+        } else if (id == R.id.about) {
+            displayFragment(new AboutFragment());
         } else {
             Toast.makeText(this, "Elemento no reconocido", Toast.LENGTH_SHORT).show();
         }
