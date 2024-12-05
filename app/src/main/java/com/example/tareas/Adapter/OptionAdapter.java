@@ -37,6 +37,13 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.ViewHolder
 
         // Vincula los datos con las vistas
         holder.optionText.setText(option);
+
+        // Maneja el clic en el item
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(option);  // Llama al método del listener
+            }
+        });
     }
 
     @Override
@@ -55,4 +62,17 @@ public class OptionAdapter extends RecyclerView.Adapter<OptionAdapter.ViewHolder
             optionText = itemView.findViewById(R.id.option_text);
         }
     }
+
+    public interface OnItemClickListener {
+        void onItemClick(String option);
+    }
+
+    private OnItemClickListener listener;
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
+
+
 }
