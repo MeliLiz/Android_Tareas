@@ -84,10 +84,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        /*if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) {
             displayFragment(new ConfigFragment());
 
-        } else*/ if (id == R.id.action_about) {
+        } else if (id == R.id.action_about) {
             displayFragment(new AboutFragment());
 
         } else if (id == R.id.action_logout) {
