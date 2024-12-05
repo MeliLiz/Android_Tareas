@@ -56,7 +56,7 @@ public class ConfigFragment extends Fragment {
             return null;
         }
 
-        int userId = UserSession.getInstance().getUserId(); // Obtén el ID del usuario
+        int userId = UserSession.getInstance().getUserId(); // Obtener el ID del usuario
         Log.i("ConfigFragment", "Usuario ID: " + userId);
 
         recyclerView = view.findViewById(R.id.recyclerView);
@@ -73,16 +73,14 @@ public class ConfigFragment extends Fragment {
                 if (option.equals("Exportar Tareas")) {
                     dbManager.openForRead();
 
-                    // Ahora pasamos el userId a la función
-                    List<Task> tasks = dbManager.getUsertasks(userId); // Obtén las tareas del usuario
+                    List<Task> tasks = dbManager.getUsertasks(userId); // Obtener las tareas del usuario
                     dbManager.close();
 
-                    // Usar el toString para depuración o visualización de la lista
                     for (Task task : tasks) {
-                        Log.i("Task Info", task.toString()); // Muestra la información de cada tarea en el log
+                        Log.i("Task Info", task.toString()); // Mostrar la información de cada tarea en el log
                     }
                     if(!tasks.isEmpty()) {
-                        String txtContent = FileUtils.exportTasksToTxt(tasks); // Asegúrate de que exportTasksToTxt pueda manejar List<Task>
+                        String txtContent = FileUtils.exportTasksToTxt(tasks);
                         saveToPublicStorage(txtContent);
                         Toast toast = Toast.makeText(requireContext(), "Archivo guardado en Downloads", Toast.LENGTH_SHORT);
                         toast.show();
@@ -91,7 +89,7 @@ public class ConfigFragment extends Fragment {
                         toast.show();
                     }
                 } else if (option.equals("Eliminar Todas las tareas")) {
-                    // Abre la base de datos en modo escritura antes de realizar la operación
+                    // Abrir la base de datos en modo escritura antes de realizar la operación
                     dbManager.openForWrite();
 
                     // Eliminar todas las tareas del usuario
@@ -106,7 +104,7 @@ public class ConfigFragment extends Fragment {
                 } else if (option.equals("Eliminar Todas las tareas completadas")) {
                     dbManager.openForWrite();
 
-                    // Llama a una función que elimine solo las tareas con estatus de "completadas" (por ejemplo, status = 3)
+                    // Llamar a una función que elimine solo las tareas con estatus de "completadas" (por ejemplo, status = 3)
                     boolean success = dbManager.deleteCompletedTasksForUser(userId);
                     dbManager.close();
 
